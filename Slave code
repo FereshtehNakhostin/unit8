@@ -1,0 +1,32 @@
+#include <Wire.h>
+int x;
+int value = 0;
+void setup() {
+Wire.begin (8);
+Serial.begin(9600);
+pinMode (9, OUTPUT);
+I
+void loop() {
+delay(100);
+Wire.onRequest (requestEvent); Wire.onReceive (recieveEvent); analogWrite (9, x);
+int t = analogRead (A0);
+value = map(t, 0, 1023, 0, 255);
+zoid recieveEvent() {
+while (1<Wire.available()) {
+char c = Wire.read();
+﻿void loop() { delay(100);
+Wire.onRequest
+(requestEvent);
+Wire.onReceive
+(recieveEvent);
+analogWrite (9, x);
+int t = analogRead (A0);
+value = map (t, 0, 1023, 0, 255);
+void recieyeEvent() {
+while (1kwire.available()) {
+char c = Wire.read();
+Serial.print (c);
+x=Wire.read();
+Serial.print ("x is: ");
+Serial.println(x);
+void requestEvent() { Wire.write(value);
